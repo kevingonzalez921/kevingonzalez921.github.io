@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Watering - Contactos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #F3F4F6;
+      background-color: #0B0F0E;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: #0B0F0E;
+    }
+
+    header {
+      background-color: #000000;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      animation: fadeDown 1s ease-out;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #A7F3D0;
+      animation: scaleIn 1s ease-in-out;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #F3F4F6;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 0.8rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #10B981;
+      color: #0B0F0E;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #A7F3D0;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .contact-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .contact-info {
+      background-color: #111827;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .contact-info p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #E0F2FE;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-details a {
+      color: #10B981;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .contact-details a:hover {
+      color: #A7F3D0;
+    }
+
+    .contact-details svg {
+      fill: #10B981;
+      width: 20px;
+      height: 20px;
+      transition: fill 0.3s ease, transform 0.3s ease;
+    }
+
+    .contact-details a:hover svg {
+      fill: #A7F3D0;
+      transform: scale(1.2);
+    }
+
+    .contact-form {
+      background-color: #111827;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      animation: fadeInUp 0.8s ease-out 0.2s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form label {
+      color: #E0F2FE;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      background-color: #1F2937;
+      color: #F3F4F6;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #10B981;
+      box-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form button {
+      padding: 0.8rem 1.5rem;
+      background-color: #10B981;
+      color: #0B0F0E;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #059669;
+      transform: scale(1.05);
+    }
+
+    .map-container {
+      margin-top: 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
+
+    footer {
+      background-color: #014421;
+      color: #F3F4F6;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-section {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <header>
+    <div class="logo">
+      <img src="logo smart.png" alt="Smart Watering" style="height: 40px; vertical-align: middle; margin-right: 5px;">
+      Smart Watering
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="Sistemas de riego.html">Sistemas de riego</a></li>
+        <li><a href="SmartWatering.html">SmartWatering</a></li>
+        <li><a href="Contactos.html">Contactos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contáctanos</h1>
+    <section class="contact-section">
+      <div class="contact-info">
+        <p>Si tienes preguntas, sugerencias o necesitas asistencia, no dudes en comunicarte con nosotros:</p>
+        <div class="contact-details">
+          <a href="mailto:contacto@smartwatering.com" aria-label="Enviar correo a contacto@smartwatering.com">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            contacto@smartwatering.com
+          </a>
+          <a href="tel:+18095551234" aria-label="Llamar al +1 (809) 555-1234">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.2 2.2z"/></svg>
+            +1 (809) 555-1234
+          </a>
+          <a href="https://maps.google.com" target="_blank" aria-label="Ver ubicación en Google Maps">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+            Calle Verde #123, Santiago, República Dominicana
+          </a>
+          <a href="https://instagram.com/smartwatering" target="_blank" aria-label="Síguenos en Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.326 3.608 1.301.975.975 1.24 2.242 1.301 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.326 2.633-1.301 3.608-.975.975-2.242 1.24-3.608 1.301-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.326-3.608-1.301-.975-.975-1.24-2.242-1.301-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.326-2.633 1.301-3.608.975.975 2.242 1.24 3.608 1.301 1.266-.058 1.646-.07 4.85-.07m0-2.163c-3.259 0-3.667.014-4.947.072-1.285.058-2.406.283-3.263 1.14-.857.857-1.082 1.978-1.14 3.263-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.058 1.285.283 2.406 1.14 3.263.857.857 1.978 1.082 3.263 1.14 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.285-.058 2.406-.283 3.263-1.14.857-.857 1.082-1.978 1.14-3.263.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.285-.283-2.406-1.14-3.263-.857-.857-1.978-1.082-3.263-1.14-1.28-.058-1.688-.072-4.947-.072zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+            Síguenos en Instagram
+          </a>
+          <a href="https://twitter.com/smartwatering" target="_blank" aria-label="Síguenos en Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 4.557a9.83 9.83 0 01-2.828.775 4.932 4.932 0 002.165-2.724 9.864 9.864 0 01-3.127 1.195 4.916 4.916 0 00-3.594-1.555 4.922 4.922 0 00-4.918 4.918 4.88 4.88 0 00.128 1.122 13.957 13.957 0 01-10.125-5.14 4.91 4.91 0 00-.666 2.475 4.92 4.92 0 002.188 4.1 4.902 4.902 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.938 4.938 0 01-2.224.084 4.923 4.923 0 004.6 3.419 9.867 9.867 0 01-6.102 2.105c-.396 0-.788-.023-1.175-.068a13.944 13.944 0 007.548 2.213c9.056 0 14.01-7.496 14.01-13.986 0-.213-.005-.426-.014-.637A9.936 9.936 0 0024 4.557z"/></svg>
+            Síguenos en Twitter
+          </a>
+          <a href="https://facebook.com/smartwatering" target="_blank" aria-label="Síguenos en Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+            Síguenos en Facebook
+          </a>
+        </div>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.143143644974!2d-70.697403985092!3d19.451974586875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb1c0f7f2b0e5d1%3A0x1b0c7c9d1f0e5d1!2sSantiago%20de%20los%20Caballeros%2C%20Dominican%20Republic!5e0!3m2!1sen!2sus!4v1697045866165!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form>
+          <div>
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+          </div>
+          <div>
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+          </div>
+          <div>
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
+          <button type="button">Enviar Mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Smart Watering. Todos los derechos reservados.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#60A5FA" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#60A5FA",
+          opacity: 0.2,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.5
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "grab" }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

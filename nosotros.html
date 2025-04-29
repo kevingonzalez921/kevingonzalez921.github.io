@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Watering - Nosotros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Estilos generales */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #F3F4F6;
+      background-color: #0B0F0E;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: #0B0F0E;
+    }
+
+    /* Encabezado */
+    header {
+      background-color: #000000;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      animation: fadeDown 1s ease-out;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #A7F3D0;
+      display: flex;
+      align-items: center;
+      animation: scaleIn 1s ease-in-out;
+    }
+
+    .logo img {
+      height: 40px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #F3F4F6;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 0.8rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #10B981;
+      color: #0B0F0E;
+    }
+
+    /* Contenido principal */
+    main {
+      padding: 6rem 2rem 2rem 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      color: #A7F3D0;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    /* Sección sobre nosotros */
+    .about-section {
+      background-color: #111827;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .about-section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #E0F2FE;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Misión, visión y valores */
+    .mission-vision-values {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .mission, .vision, .values {
+      background-color: #1F2937;
+      padding: 1.5rem;
+      border-radius: 8px;
+      animation: fadeInUp 0.8s ease-out 0.2s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+
+    .mission h2, .vision h2, .values h2 {
+      color: #A7F3D0;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .values ul {
+      list-style: none;
+      padding: 0;
+      color: #E0F2FE;
+      font-size: 1.1rem;
+    }
+
+    .values li {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .values li::before {
+      content: '✓';
+      color: #10B981;
+      font-weight: bold;
+    }
+
+    /* Animaciones */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .about-section {
+        padding: 1rem;
+      }
+
+      .mission, .vision, .values {
+        padding: 1rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <header id="navbar">
+    <div class="logo">
+      <img src="logo smart.png" alt="Smart Watering" style="height: 40px; vertical-align: middle; margin-right: 5px;">
+      Smart Watering
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="Sistemas de riego.html">Sistemas de riego</a></li>
+        <li><a href="SmartWatering.html">SmartWatering</a></li>
+        <li><a href="Contactos.html">Contactos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Sobre Nosotros</h1>
+    <section class="about-section">
+      <p>Smart Watering nace con el objetivo de revolucionar el mundo agrícola a través de soluciones tecnológicas de riego inteligente. Somos una empresa comprometida con la sostenibilidad, la eficiencia y el progreso en el campo.</p>
+      <p>Nuestro equipo multidisciplinario combina conocimientos en ingeniería, tecnología, agronomía y diseño para crear sistemas de riego personalizados que optimicen el uso del agua, reducen costos y aumentan la productividad agrícola.</p>
+      <p>Creemos firmemente que el futuro de la agricultura está en la innovación. Por eso, trabajamos constantemente para mejorar nuestros productos y servicios, adaptándonos a las necesidades reales de los productores y del medio ambiente.</p>
+      <p>Con Smart Watering, no solo estás adoptando una tecnología avanzada, estás contribuyendo a una agricultura más inteligente y responsable.</p>
+      <div class="mission-vision-values">
+        <div class="mission">
+          <h2>Nuestra Misión</h2>
+          <p>Revolucionar la agricultura mediante soluciones de riego inteligente que promuevan la sostenibilidad, optimicen el uso del agua y mejoren la productividad de los productores. Nos esforzamos por empoderar tanto a pequeños agricultores como a grandes productores en la República Dominicana y más allá, proporcionando tecnologías accesibles y personalizadas que reduzcan el impacto ambiental y fomenten el desarrollo económico de las comunidades agrícolas. A través de nuestra innovación, buscamos garantizar un uso eficiente de los recursos hídricos, preservándolos para las generaciones futuras.</p>
+        </div>
+        <div class="vision">
+          <h2>Nuestra Visión</h2>
+          <p>Liderar el futuro de la agricultura con tecnologías innovadoras que fomenten una gestión responsable de los recursos y apoyen el desarrollo sostenible del sector agrícola. Aspiramos a expandir nuestra presencia en el Caribe y América Latina, integrando inteligencia artificial y datos en tiempo real para crear sistemas de riego aún más precisos y eficientes. Nuestra meta es ser reconocidos globalmente como pioneros en soluciones de riego que combinen tecnología de punta con un compromiso firme hacia la sostenibilidad y la protección del medio ambiente.</p>
+        </div>
+        <div class="values">
+          <h2>Nuestros Valores</h2>
+          <ul>
+            <li><strong>Sostenibilidad</strong>: Priorizamos el uso eficiente del agua para proteger el medio ambiente.</li>
+            <li><strong>Innovación</strong>: Desarrollamos tecnologías avanzadas para transformar la agricultura.</li>
+            <li><strong>Eficiencia</strong>: Diseñamos soluciones que reducen costos y maximizan resultados.</li>
+            <li><strong>Compromiso</strong>: Nos adaptamos a las necesidades de nuestros clientes y del sector.</li>
+            <li><strong>Responsabilidad</strong>: Contribuimos a una agricultura más inteligente y sostenible.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    // Fondo de partículas
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#60A5FA" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#60A5FA",
+          opacity: 0.2,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.5
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "grab" }
+        }
+      }
+    });
+
+    // JavaScript para mostrar/ocultar el encabezado al hacer scroll
+    let prevScrollpos = window.pageYOffset;
+    const navbar = document.getElementById("navbar");
+
+    window.onscroll = function() {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        navbar.style.top = "0";
+      } else {
+        navbar.style.top = "-80px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  </script>
+</body>
+</html>

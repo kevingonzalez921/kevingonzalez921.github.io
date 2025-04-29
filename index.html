@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+  <link rel="icon" href="logo smart.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Watering - Inicio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #F3F4F6;
+      background-color: #0B0F0E;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: #0B0F0E;
+    }
+
+    header {
+      background-color: #000000;
+      color: white;
+      padding: 1rem 2rem; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      animation: fadeDown 1s ease-out;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #A7F3D0;
+      animation: scaleIn 1s ease-in-out;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav li {
+      position: relative;
+    }
+
+    nav a {
+      color: #F3F4F6;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 0.8rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #10B981;
+      color: #0B0F0E;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      background-color: #FFFFFF;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      border-radius: 5px;
+      overflow: hidden;
+      z-index: 100;
+    }
+
+    .submenu li a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #111827;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .submenu li a:hover {
+      background-color: #10B981;
+      color: white;
+    }
+
+    nav li:hover .submenu {
+      display: block;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-contenido {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 2rem;
+      gap: 2rem;
+    }
+
+    .hero-contenido .texto {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .hero-contenido h1 {
+      font-size: 2.8rem;
+      color: #A7F3D0;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 1s ease-out;
+    }
+
+    .hero-contenido p {
+      font-size: 1.2rem;
+      color: #E0F2FE;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      animation: fadeUp 1.4s ease-out;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: #10B981;
+      color: #0B0F0E;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      animation: fadeUp 1.8s ease-out;
+    }
+
+    .btn-cta:hover {
+      background-color: #059669;
+      color: white;
+    }
+
+    .hero-contenido .imagen {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+      animation: fadeUp 2s ease-out;
+    }
+
+    .hero-contenido .imagen img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+    }
+
+    .hero-contenido .imagen img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    footer {
+      background-color: #014421;
+      color: #F3F4F6;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background-color: #014421;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        display: none;
+        width: 200px;
+        border-radius: 0 0 10px 10px;
+      }
+
+      nav:hover ul {
+        display: flex;
+      }
+
+      .hero-contenido {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-contenido h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-contenido p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Fondo animado -->
+  <div id="particles-js"></div>
+
+  <!-- Encabezado -->
+  <header>
+    <div class="logo">
+      <img src="logo smart.png" alt="Smart Watering" style="height: 40px; vertical-align: middle; margin-right: 5px;">
+      Smart Watering
+    </div>
+    <nav>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="Sistemas de riego.html">Sistemas de riego</a></li>
+    <li><a href="SmartWatering.html">SmartWatering</a></li>
+    <li><a href="Contactos.html">Contactos</a></li>
+  </ul>
+</nav>
+
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <section class="hero-contenido">
+      <div class="texto">
+        <h1>Smart Watering</h1>
+        <p>Integra tecnología de vanguardia en tus cultivos. Optimiza recursos, aumenta la productividad y cuida el medio ambiente con Smart Watering.</p>
+        <a href="SmartWatering.html" class="btn-cta">Descubre cómo funciona</a>
+      </div>
+      <div class="imagen">
+        <img src="presentacion-riego.png" alt="Esquema de sistema de riego inteligente">
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    &copy; 2025 Smart Watering. Todos los derechos reservados.
+  </footer>
+
+  <!-- Partículas animadas -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#60A5FA" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#60A5FA",
+          opacity: 0.2,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.5
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "grab" }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

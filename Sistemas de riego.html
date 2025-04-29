@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistemas de Riego - Smart Watering</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #F3F4F6;
+      background-color: #0B0F0E;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: #0B0F0E;
+    }
+
+    header {
+      background-color: #000000;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      animation: fadeDown 1s ease-out;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #A7F3D0;
+      animation: scaleIn 1s ease-in-out;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #F3F4F6;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 0.8rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #10B981;
+      color: #0B0F0E;
+    }
+
+    main {
+      padding: 4rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      text-align: center;
+      color: #A7F3D0;
+      margin-bottom: 2rem;
+      font-size: 2.8rem;
+    }
+
+    .intro {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #E0F2FE;
+      margin-bottom: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .sistemas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .sistema {
+      background-color: #111827;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .sistema:nth-child(1) { animation-delay: 0.1s; }
+    .sistema:nth-child(2) { animation-delay: 0.2s; }
+    .sistema:nth-child(3) { animation-delay: 0.3s; }
+    .sistema:nth-child(4) { animation-delay: 0.4s; }
+    .sistema:nth-child(5) { animation-delay: 0.5s; }
+    .sistema:nth-child(6) { animation-delay: 0.6s; }
+    .sistema:nth-child(7) { animation-delay: 0.7s; }
+    .sistema:nth-child(8) { animation-delay: 0.8s; }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .sistema:hover {
+      transform: translateY(-5px);
+    }
+
+    .sistema h3 {
+      color: #10B981;
+      margin-bottom: 0.5rem;
+    }
+
+    .sistema p {
+      color: #D1D5DB;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .sistema img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .sistema:hover img {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #014421;
+      color: #F3F4F6;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Fondo animado -->
+  <div id="particles-js"></div>
+
+  <!-- Encabezado -->
+  <header>
+    <div class="logo">
+      <img src="logo smart.png" alt="Smart Watering" style="height: 40px; vertical-align: middle; margin-right: 5px;">
+      Smart Watering
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="Sistemas de riego.html">Sistemas de riego</a></li>
+        <li><a href="SmartWatering.html">SmartWatering</a></li>
+        <li><a href="Contactos.html">Contactos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <h1>Sistemas de Riego</h1>
+    <p class="intro">
+      Conoce los distintos tipos de sistemas de riego disponibles para optimizar el uso del agua y aumentar la eficiencia en tus cultivos.
+    </p>
+
+    <div class="sistemas">
+      <div class="sistema">
+        <h3>Riego por Goteo</h3>
+        <img src="riego por goteo.jpg" alt="Sistema de riego por goteo en cultivo agrícola">
+        <p>Distribuye el agua gota a gota directamente en la raíz de las plantas. Es ideal para cultivos con alta precisión hídrica y zonas áridas.</p>
+      </div>
+      <div class="sistema">
+        <h3>Riego por Aspersión</h3>
+        <img src="riego por aspercion.jpg" alt="Aspersores regando un campo agrícola">
+        <p>Simula la lluvia al lanzar agua al aire mediante aspersores. Es efectivo para áreas extensas y cultivos como cereales o pastos.</p>
+      </div>
+      <div class="sistema">
+        <h3>Riego por Inundación</h3>
+        <img src="riego por inundacion.jpg" alt="Campo inundado para cultivo de arroz">
+        <p>Consiste en inundar el terreno de cultivo. Aunque menos eficiente, es tradicional en cultivos como el arroz.</p>
+      </div>
+      <div class="sistema">
+        <h3>Riego por Gravedad</h3>
+        <img src="riego por gravedad.jpg" alt="Canales distribuyendo agua por pendiente">
+        <p>Utiliza la pendiente natural del terreno para distribuir el agua sin necesidad de bombeo. Requiere planificación del terreno.</p>
+      </div>
+      <div class="sistema">
+        <h3>Riego Subterráneo</h3>
+        <img src="riego subterraneo.jpg" alt="Tuberías enterradas para riego a nivel de raíz">
+        <p>Entierra las tuberías para suministrar agua directamente a las raíces, reduciendo evaporación y malezas.</p>
+      </div>
+      <div class="sistema">
+        <h3>Riego por Nebulización</h3>
+        <img src="riego por nebulizacion.jpg" alt="Sistema de riego por nebulización en invernadero">
+        <p>Genera finas gotas en forma de niebla, usado comúnmente en viveros y ambientes controlados por humedad.</p>
+      </div>
+      <div class="sistema">
+        <h3>Riego Hidropónico</h3>
+        <img src="riego hidroponico.jpg" alt="Cultivo hidropónico con solución nutritiva">
+        <p>Utilizado en cultivos sin suelo, donde las raíces reciben una solución nutritiva en agua.</p>
+      </div>
+      <div class="sistema">
+        <h3>Riego Solar</h3>
+        <img src="riego solar.jpg" alt="Paneles solares conectados a sistema de riego">
+        <p>Incorpora paneles solares para alimentar bombas o sistemas automatizados, ideal para zonas rurales sin acceso eléctrico.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    © 2025 Smart Watering. Todos los derechos reservados.
+  </footer>
+
+  <!-- Partículas animadas -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#60A5FA" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#60A5FA",
+          opacity: 0.2,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.5
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "grab" }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

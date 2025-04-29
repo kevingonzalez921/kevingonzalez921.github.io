@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Watering - Detalles</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #F3F4F6;
+      background-color: #0B0F0E;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: #0B0F0E;
+    }
+
+    header {
+      background-color: #000000;
+      color: white;
+      padding: 1rem 2rem; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      animation: fadeDown 1s ease-out;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #A7F3D0;
+      animation: scaleIn 1s ease-in-out;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #F3F4F6;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 0.8rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #10B981;
+      color: #0B0F0E;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    main.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1 {
+      color: #A7F3D0;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #E0F2FE;
+      text-align: justify;
+      margin-bottom: 1.5rem;
+    }
+
+    .imagen {
+      text-align: center;
+      margin: 3rem 0;
+      overflow: hidden;
+    }
+
+    .imagen img {
+      max-width: 60%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .imagen img:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      background-color: #014421;
+      color: #F3F4F6;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <header>
+    <div class="logo">
+      <img src="logo smart.png" alt="Smart Watering" style="height: 40px; vertical-align: middle; margin-right: 5px;">
+      Smart Watering
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="Sistemas de riego.html">Sistemas de riego</a></li>
+        <li><a href="SmartWatering.html">SmartWatering</a></li>
+        <li><a href="Contactos.html">Contactos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Smart Watering - Sistema de Riego Inteligente</h1>
+    <p>El sistema de riego inteligente de Smart Watering se ha diseñado para proporcionar la mejor solución tecnológica en el manejo de agua para cultivos. Este sistema utiliza sensores, controladores automatizados y plataformas de análisis para optimizar el uso del agua, reduciendo el desperdicio y mejorando la eficiencia de los cultivos.</p>
+
+    <p>La tecnología está basada en sensores de humedad del suelo, pronósticos meteorológicos y algoritmos avanzados que permiten ajustar el riego en función de las condiciones ambientales y las necesidades específicas de las plantas. El sistema también puede ser operado y monitoreado de manera remota mediante aplicaciones móviles o plataformas web, brindando control total y flexibilidad a los agricultores.</p>
+
+    <div class="imagen">
+      <img src="sistema.png" alt="Sistema de riego inteligente">
+    </div>
+
+    <p>La capacidad de detectar niveles de humedad en tiempo real asegura que las plantas reciban la cantidad precisa de agua, evitando tanto el riego excesivo como el insuficiente. Además, el sistema se adapta al tipo de cultivo, las variaciones estacionales y las previsiones meteorológicas, garantizando el máximo rendimiento y ahorro de recursos.</p>
+
+    <p>Los agricultores también pueden ajustar parámetros como la frecuencia y duración del riego, obteniendo recomendaciones personalizadas para su situación específica. Este sistema inteligente ayuda a reducir los costos operativos, mejorar la calidad de los cultivos y, lo más importante, promover prácticas agrícolas sostenibles.</p>
+  </main>
+
+  <footer>
+    © 2025 Smart Watering. Todos los derechos reservados.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#60A5FA" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#60A5FA",
+          opacity: 0.2,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.5
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "grab" }
+        }
+      }
+    });
+
+    // Efecto de aparición
+    window.addEventListener('load', () => {
+      document.querySelector('main').classList.add('visible');
+    });
+  </script>
+</body>
+</html>
