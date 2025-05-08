@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Smart Watering - Contactos</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
       box-sizing: border-box;
@@ -215,14 +216,142 @@
       border: none;
     }
 
+    /* Estilos del footer mejorado */
     footer {
-      background-color: #014421;
+      background: linear-gradient(180deg, #014421 0%, #0B0F0E 100%);
       color: #F3F4F6;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
+      padding: 4rem 2rem 2rem;
       position: relative;
       z-index: 1;
+      font-size: 1rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-section h3 {
+      color: #A7F3D0;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+    }
+
+    .footer-about .footer-logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .footer-about .footer-logo img {
+      height: 50px;
+      margin-right: 12px;
+    }
+
+    .footer-about p {
+      font-size: 1rem;
+      color: #E0F2FE;
+      line-height: 1.6;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: #E0F2FE;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #10B981;
+    }
+
+    .footer-contact p {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+    }
+
+    .footer-contact i {
+      color: #10B981;
+      font-size: 1.2rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .footer-social a {
+      color: #E0F2FE;
+      font-size: 1.8rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      color: #10B981;
+    }
+
+    .footer-newsletter p {
+      font-size: 1rem;
+      color: #E0F2FE;
+      margin-bottom: 1rem;
+    }
+
+    .footer-newsletter form {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .footer-newsletter input {
+      flex: 1;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #F3F4F6;
+      font-size: 1rem;
+    }
+
+    .footer-newsletter input::placeholder {
+      color: #A7F3D0;
+    }
+
+    .footer-newsletter button {
+      padding: 0.8rem 1.2rem;
+      background-color: #10B981;
+      color: #0B0F0E;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .footer-newsletter button:hover {
+      background-color: #A7F3D0;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      font-size: 0.9rem;
+      color: #A7F3D0;
     }
 
     @keyframes fadeInUp {
@@ -270,6 +399,31 @@
 
       h1 {
         font-size: 2rem;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-about .footer-logo {
+        justify-content: center;
+      }
+
+      .footer-contact p {
+        justify-content: center;
+      }
+
+      .footer-social {
+        justify-content: center;
+      }
+
+      .footer-newsletter form {
+        flex-direction: column;
+      }
+
+      .footer-newsletter button {
+        width: 100%;
       }
     }
   </style>
@@ -349,7 +503,51 @@
   </main>
 
   <footer>
-    © 2025 Smart Watering. Todos los derechos reservados.
+    <div class="footer-container">
+      <div class="footer-section footer-about">
+        <div class="footer-logo">
+          <img src="logo smart.png" alt="Smart Watering Logo" loading="lazy">
+          <h3>Smart Watering</h3>
+        </div>
+        <p>Transformamos la agricultura con sistemas de riego inteligentes que optimizan el uso del agua y promueven la sostenibilidad.</p>
+      </div>
+
+      <div class="footer-section footer-links">
+        <h3>Explora</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="Sistemas de riego.html">Sistemas de Riego</a></li>
+          <li><a href="SmartWatering.html">SmartWatering</a></li>
+          <li><a href="Contactos.html">Contactos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section footer-contact">
+        <h3>Contáctanos</h3>
+        <p><i class="fas fa-envelope"></i> info@smartwatering.com</p>
+        <p><i class="fas fa-phone"></i> +123 456 7890</p>
+        <p><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad, País</p>
+        <div class="footer-social">
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section footer-newsletter">
+        <h3>Boletín</h3>
+        <p>Suscríbete para recibir consejos, noticias y actualizaciones sobre riego inteligente.</p>
+        <form action="https://formspree.io/f/tu_correo" method="POST" aria-label="Formulario de suscripción al boletín">
+          <input type="email" name="email" placeholder="Tu correo electrónico" required aria-label="Correo electrónico">
+          <button type="submit">Suscribirse</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Smart Watering. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
