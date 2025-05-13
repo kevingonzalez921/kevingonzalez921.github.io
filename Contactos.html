@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Smart Watering - Contactos</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous">
+  <!-- Respaldo local (descomentar si se descarga Font Awesome localmente) -->
+  <!-- <link rel="stylesheet" href="path/to/local/fontawesome/css/all.min.css"> -->
   <style>
     * {
       box-sizing: border-box;
@@ -262,6 +264,7 @@
 
     .footer-links ul {
       list-style: none;
+      padding: 0;
     }
 
     .footer-links li {
@@ -483,25 +486,26 @@
       </div>
 
       <div class="contact-form">
-        <form>
+        <form action="https://formspree.io/f/tu_correo" method="POST" aria-label="Formulario de contacto">
           <div>
             <label for="name">Nombre</label>
-            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required aria-label="Nombre">
           </div>
           <div>
             <label for="email">Correo Electrónico</label>
-            <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required aria-label="Correo electrónico">
           </div>
           <div>
             <label for="message">Mensaje</label>
-            <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..." required aria-label="Mensaje"></textarea>
           </div>
-          <button type="button">Enviar Mensaje</button>
+          <button type="submit">Enviar Mensaje</button>
         </form>
       </div>
     </section>
   </main>
 
+  <!-- Pie de página -->
   <footer>
     <div class="footer-container">
       <div class="footer-section footer-about">
@@ -511,7 +515,6 @@
         </div>
         <p>Transformamos la agricultura con sistemas de riego inteligentes que optimizan el uso del agua y promueven la sostenibilidad.</p>
       </div>
-
       <div class="footer-section footer-links">
         <h3>Explora</h3>
         <ul>
@@ -522,19 +525,17 @@
           <li><a href="Contactos.html">Contactos</a></li>
         </ul>
       </div>
-
       <div class="footer-section footer-contact">
         <h3>Contáctanos</h3>
-        <p><i class="fas fa-envelope"></i> info@smartwatering.com</p>
-        <p><i class="fas fa-phone"></i> +123 456 7890</p>
-        <p><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad, País</p>
+        <p><i class="fas fa-envelope"></i> contacto@smartwatering.com</p>
+        <p><i class="fas fa-phone"></i> +1 (809) 555-1234</p>
+        <p><i class="fas fa-map-marker-alt"></i> Calle Verde #123, Santiago, República Dominicana</p>
         <div class="footer-social">
           <a href="https://instagram.com/smartwatering" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://twitter.com/smartwatering" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
           <a href="https://facebook.com/smartwatering" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         </div>
       </div>
-
       <div class="footer-section footer-newsletter">
         <h3>Boletín</h3>
         <p>Suscríbete para recibir consejos, noticias y actualizaciones sobre riego inteligente.</p>
@@ -544,39 +545,42 @@
         </form>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>© 2025 Smart Watering. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js?v=2.0.0"></script>
   <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 60 },
-        color: { value: "#60A5FA" },
-        shape: { type: "circle" },
-        opacity: { value: 0.3 },
-        size: { value: 3 },
-        line_linked: {
-          enable: true,
-          distance: 120,
-          color: "#60A5FA",
-          opacity: 0.2,
-          width: 1
+    if (typeof particlesJS !== 'undefined') {
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 60 },
+          color: { value: "#60A5FA" },
+          shape: { type: "circle" },
+          opacity: { value: 0.3 },
+          size: { value: 3 },
+          line_linked: {
+            enable: true,
+            distance: 120,
+            color: "#60A5FA",
+            opacity: 0.2,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 1.5
+          }
         },
-        move: {
-          enable: true,
-          speed: 1.5
+        interactivity: {
+          events: {
+            onhover: { enable: true, mode: "grab" }
+          }
         }
-      },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: "grab" }
-        }
-      }
-    });
+      });
+    } else {
+      console.warn("particles.js no se cargó correctamente.");
+    }
   </script>
 </body>
 </html>
