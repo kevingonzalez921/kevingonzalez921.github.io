@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart Watering - Detalles</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous">
+  <!-- Respaldo local (descomentar si se descarga Font Awesome localmente) -->
+  <!-- <link rel="stylesheet" href="path/to/local/fontawesome/css/all.min.css"> -->
   <style>
     * {
       box-sizing: border-box;
@@ -15,7 +17,7 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      color: #F3F4FAZ;
+      color: #F3F4F6;
       background-color: #0B0F0E;
       overflow-x: hidden;
       line-height: 1.6;
@@ -155,76 +157,7 @@
       transform: scale(1.1);
     }
 
-    /* Estilos para la sección de FAQ */
-    .faq-section {
-      margin: 4rem 0;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .faq-section h2 {
-      color: #A7F3D0;
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .faq-item {
-      margin-bottom: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .faq-question:hover {
-      background: rgba(0, 0, 0, 0.4);
-    }
-
-    .faq-question h3 {
-      font-size: 1.2rem;
-      color: #E0F2FE;
-    }
-
-    .faq-question i {
-      font-size: 1.2rem;
-      color: #10B981;
-      transition: transform 0.3s ease;
-    }
-
-    .faq-question.active i {
-      transform: rotate(180deg);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0 1rem;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-    }
-
-    .faq-answer p {
-      padding: 1rem 0;
-      font-size: 1rem;
-      color: #E0F2FE;
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 200px; /* Ajusta según el contenido */
-      padding: 1rem;
-    }
-
-    /* Estilos para el footer */
+    /* Estilos del footer mejorado */
     footer {
       background: linear-gradient(180deg, #014421 0%, #0B0F0E 100%);
       color: #F3F4F6;
@@ -270,6 +203,7 @@
 
     .footer-links ul {
       list-style: none;
+      padding: 0;
     }
 
     .footer-links li {
@@ -412,14 +346,6 @@
         max-width: 100%;
       }
 
-      .faq-section {
-        padding: 1rem;
-      }
-
-      .faq-question h3 {
-        font-size: 1rem;
-      }
-
       .footer-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -448,7 +374,7 @@
   </style>
 </head>
 <body>
-  <div id="particles-js"><canvas class="particles-js-canvas-el" width="854" height="788" style="width: 100%; height: 100%;"></canvas></div>
+  <div id="particles-js"></div>
 
   <header>
     <div class="logo">
@@ -488,57 +414,9 @@
     <div class="content-card">
       <p>Los agricultores también pueden ajustar parámetros como la frecuencia y duración del riego, obteniendo recomendaciones personalizadas para su situación específica. Este sistema inteligente ayuda a reducir los costos operativos, mejorar la calidad de los cultivos y, lo más importante, promover prácticas agrícolas sostenibles.</p>
     </div>
-
-    <section class="faq-section">
-      <h2>Preguntas Frecuentes</h2>
-      <div class="faq-item">
-        <div class="faq-question" aria-expanded="false">
-          <h3>¿Cuánto cuesta el sistema de riego inteligente?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>El costo depende del tamaño del terreno, el tipo de cultivo y las funcionalidades requeridas. Contáctanos para una cotización personalizada.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question" aria-expanded="false">
-          <h3>¿Es complicado instalar el sistema?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>No, nuestro equipo ofrece instalación profesional y soporte técnico. La configuración inicial es sencilla y te guiaremos en cada paso.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question" aria-expanded="false">
-          <h3>¿El sistema es compatible con todos los cultivos?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Sí, nuestro sistema se adapta a diferentes tipos de cultivos, desde hortalizas hasta árboles frutales, ajustando el riego según las necesidades específicas.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question" aria-expanded="false">
-          <h3>¿Qué pasa si no tengo conexión a internet?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>El sistema puede operar de forma autónoma con configuraciones preestablecidas, aunque recomendamos conexión para monitoreo remoto y actualizaciones.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question" aria-expanded="false">
-          <h3>¿Ofrecen garantía o soporte técnico?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Sí, ofrecemos una garantía de 2 años y soporte técnico continuo para asegurar el óptimo funcionamiento del sistema.</p>
-        </div>
-      </div>
-    </section>
   </main>
 
+  <!-- Pie de página -->
   <footer>
     <div class="footer-container">
       <div class="footer-section footer-about">
@@ -548,7 +426,6 @@
         </div>
         <p>Transformamos la agricultura con sistemas de riego inteligentes que optimizan el uso del agua y promueven la sostenibilidad.</p>
       </div>
-
       <div class="footer-section footer-links">
         <h3>Explora</h3>
         <ul>
@@ -559,19 +436,17 @@
           <li><a href="Contactos.html">Contactos</a></li>
         </ul>
       </div>
-
       <div class="footer-section footer-contact">
         <h3>Contáctanos</h3>
         <p><i class="fas fa-envelope"></i> info@smartwatering.com</p>
         <p><i class="fas fa-phone"></i> +123 456 7890</p>
         <p><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad, País</p>
         <div class="footer-social">
-          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/smartwatering" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/smartwatering" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://facebook.com/smartwatering" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         </div>
       </div>
-
       <div class="footer-section footer-newsletter">
         <h3>Boletín</h3>
         <p>Suscríbete para recibir consejos, noticias y actualizaciones sobre riego inteligente.</p>
@@ -581,61 +456,66 @@
         </form>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>© 2025 Smart Watering. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js?v=2.0.0"></script>
   <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 50 },
-        color: { value: "#60A5FA" },
-        shape: { type: "circle" },
-        opacity: { value: 0.3 },
-        size: { value: 3 },
-        line_linked: {
-          enable: true,
-          distance: 120,
-          color: "#60A5FA",
-          opacity: 0.2,
-          width: 1
+    if (typeof particlesJS !== 'undefined') {
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 50 },
+          color: { value: "#60A5FA" },
+          shape: { type: "circle" },
+          opacity: { value: 0.3 },
+          size: { value: 3 },
+          line_linked: {
+            enable: true,
+            distance: 120,
+            color: "#60A5FA",
+            opacity: 0.2,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 1
+          }
         },
-        move: {
-          enable: true,
-          speed: 1
-        }
-      },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: "grab" }
-        }
-      },
-      retina_detect: true
-    });
-
+        interactivity: {
+          events: {
+            onhover: { enable: true, mode: "grab" }
+          }
+        },
+        retina_detect: true
+      });
+    } else {
+      console.warn("particles.js no se cargó correctamente.");
+    }
+  </script>
+  <script>
     // Main content reveal
     window.addEventListener('load', () => {
-      document.querySelector('main').classList.add('visible');
+      const main = document.querySelector('main');
+      if (main) {
+        main.classList.add('visible');
+      } else {
+        console.warn("Elemento 'main' no encontrado.");
+      }
     });
-
+  </script>
+  <script>
     // Hamburger menu toggle
     const hamburger = document.querySelector('.hamburger');
     const navUl = document.querySelector('nav ul');
-    hamburger.addEventListener('click', () => {
-      navUl.classList.toggle('active');
-    });
-
-    // FAQ toggle functionality
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const faqItem = question.parentElement;
-        const isActive = faqItem.classList.toggle('active');
-        question.setAttribute('aria-expanded', isActive);
+    if (hamburger && navUl) {
+      hamburger.addEventListener('click', () => {
+        navUl.classList.toggle('active');
       });
-    });
+    } else {
+      console.warn("Elementos '.hamburger' o 'nav ul' no encontrados.");
+    }
   </script>
 </body>
 </html>
