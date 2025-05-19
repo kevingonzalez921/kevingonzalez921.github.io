@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sistemas de Riego - Smart Watering</title>
+  <title>Smart Watering - Sistemas de Riego</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous">
-  <!-- Respaldo local (descomentar si se descarga Font Awesome localmente) -->
-  <!-- <link rel="stylesheet" href="path/to/local/fontawesome/css/all.min.css"> -->
   <style>
     * {
       box-sizing: border-box;
@@ -75,81 +73,138 @@
     }
 
     main {
-      padding: 4rem 2rem;
       position: relative;
       z-index: 1;
+      padding: 4rem 2rem;
+      max-width: 960px;
+      margin: 0 auto;
     }
 
     h1 {
-      text-align: center;
       color: #A7F3D0;
-      margin-bottom: 2rem;
-      font-size: 2.8rem;
-    }
-
-    .intro {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
       text-align: center;
-      font-size: 1.2rem;
-      color: #E0F2FE;
-      margin-bottom: 3rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
-    .sistemas {
+    .irrigation-types {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
+      margin-bottom: 4rem;
     }
 
-    .sistema {
+    .irrigation-type {
       background-color: #111827;
-      border-radius: 12px;
       padding: 1.5rem;
+      border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 0.8s ease forwards;
+      text-align: center;
+      animation: fadeInUp 0.8s ease-out;
     }
 
-    .sistema:nth-child(1) { animation-delay: 0.1s; }
-    .sistema:nth-child(2) { animation-delay: 0.2s; }
-    .sistema:nth-child(3) { animation-delay: 0.3s; }
-    .sistema:nth-child(4) { animation-delay: 0.4s; }
-    .sistema:nth-child(5) { animation-delay: 0.5s; }
-    .sistema:nth-child(6) { animation-delay: 0.6s; }
-    .sistema:nth-child(7) { animation-delay: 0.7s; }
-    .sistema:nth-child(8) { animation-delay: 0.8s; }
-
-    .sistema:hover {
-      transform: translateY(-5px);
+    .irrigation-type img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
     }
 
-    .sistema h3 {
-      color: #10B981;
+    .irrigation-type h2 {
+      color: #A7F3D0;
+      font-size: 1.8rem;
       margin-bottom: 0.5rem;
     }
 
-    .sistema p {
-      color: #D1D5DB;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .sistema img {
-      width: 100%;
-      border-radius: 10px;
+    .irrigation-type p {
+      color: #E0F2FE;
+      font-size: 1rem;
+      line-height: 1.6;
       margin-bottom: 1rem;
-      transition: transform 0.3s ease;
     }
 
-    .sistema:hover img {
+    .irrigation-type a {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: #10B981;
+      color: #0B0F0E;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .irrigation-type a:hover {
+      background-color: #059669;
       transform: scale(1.05);
     }
 
-    /* Estilos del footer mejorado */
+    /* Estilos para secciones de detalles */
+    .irrigation-details {
+      background-color: #111827;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .irrigation-details h2 {
+      color: #A7F3D0;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .irrigation-details h3 {
+      color: #E0F2FE;
+      font-size: 1.4rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .irrigation-details p {
+      color: #E0F2FE;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .irrigation-details ul {
+      list-style: none;
+      padding: 0;
+      color: #E0F2FE;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .irrigation-details ul li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .irrigation-details ul li::before {
+      content: '✓';
+      color: #10B981;
+      font-weight: bold;
+    }
+
+    .irrigation-details a.back-link {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: #374151;
+      color: #F3F4F6;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .irrigation-details a.back-link:hover {
+      background-color: #4B5563;
+    }
+
+    /* Estilos del footer */
     footer {
       background: linear-gradient(180deg, #014421 0%, #0B0F0E 100%);
       color: #F3F4F6;
@@ -289,11 +344,11 @@
     }
 
     @keyframes fadeInUp {
-      0% {
+      from {
         opacity: 0;
         transform: translateY(30px);
       }
-      100% {
+      to {
         opacity: 1;
         transform: translateY(0);
       }
@@ -321,9 +376,22 @@
       }
     }
 
-    @media (max-width: 480px) {
-      main {
-        padding: 2rem 1rem;
+    @media (max-width: 768px) {
+      .irrigation-types {
+        grid-template-columns: 1fr;
+      }
+
+      .irrigation-type,
+      .irrigation-details {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .irrigation-details h2 {
+        font-size: 1.8rem;
       }
 
       .footer-container {
@@ -354,13 +422,10 @@
   </style>
 </head>
 <body>
-  <!-- Fondo animado -->
   <div id="particles-js"></div>
-
-  <!-- Encabezado -->
   <header>
     <div class="logo">
-      <img src="logo smart.png" alt="Smart Watering" style="height: 40px; vertical-align: middle; margin-right: 5px;">
+      <img src="logo smart.png" alt="Smart Watering Logo" style="height: 40px; vertical-align: middle; margin-right: 5px;" loading="lazy">
       Smart Watering
     </div>
     <nav>
@@ -374,58 +439,113 @@
     </nav>
   </header>
 
-  <!-- Contenido principal -->
   <main>
     <h1>Sistemas de Riego</h1>
-    <p class="intro">
-      Conoce los distintos tipos de sistemas de riego disponibles para optimizar el uso del agua y aumentar la eficiencia en tus cultivos.
-    </p>
+    <section class="irrigation-types">
+      <div class="irrigation-type">
+        <img src="sistema.png" alt="Riego por Goteo" loading="lazy">
+        <h2>Riego por Goteo</h2>
+        <p>El riego por goteo suministra agua directamente a la raíz de las plantas, optimizando el consumo y mejorando la eficiencia.</p>
+        <a href="#detalle-goteo" aria-label="Ver más sobre Riego por Goteo">Ver Más</a>
+      </div>
+      <div class="irrigation-type">
+        <img src="sistema.png" alt="Riego por Aspersión" loading="lazy">
+        <h2>Riego por Aspersión</h2>
+        <p>Este sistema distribuye agua en forma de lluvia, ideal para cubrir grandes áreas de cultivo de manera uniforme.</p>
+        <a href="#detalle-aspersión" aria-label="Ver más sobre Riego por Aspersión">Ver Más</a>
+      </div>
+      <div class="irrigation-type">
+        <img src="sistema.png" alt="Riego Subterráneo" loading="lazy">
+        <h2>Riego Subterráneo</h2>
+        <p>El riego subterráneo utiliza tuberías enterradas para minimizar la evaporación y maximizar la eficiencia hídrica.</p>
+        <a href="#detalle-subterraneo" aria-label="Ver más sobre Riego Subterráneo">Ver Más</a>
+      </div>
+      <div class="irrigation-type">
+        <img src="sistema.png" alt="Riego Automatizado" loading="lazy">
+        <h2>Riego Automatizado</h2>
+        <p>Incorpora sensores y tecnología para ajustar el riego según las necesidades del cultivo en tiempo real.</p>
+        <a href="#detalle-automatizado" aria-label="Ver más sobre Riego Automatizado">Ver Más</a>
+      </div>
+    </section>
 
-    <div class="sistemas">
-      <div class="sistema">
-        <h3>Riego por Goteo</h3>
-        <img src="riego por goteo.jpg" alt="Sistema de riego por goteo en cultivo agrícola">
-        <p>Distribuye el agua gota a gota directamente en la raíz de las plantas. Es ideal para cultivos con alta precisión hídrica y zonas áridas.</p>
-      </div>
-      <div class="sistema">
-        <h3>Riego por Aspersión</h3>
-        <img src="riego por aspercion.jpg" alt="Aspersores regando un campo agrícola">
-        <p>Simula la lluvia al lanzar agua al aire mediante aspersores. Es efectivo para áreas extensas y cultivos como cereales o pastos.</p>
-      </div>
-      <div class="sistema">
-        <h3>Riego por Inundación</h3>
-        <img src="riego por inundacion.jpg" alt="Campo inundado para cultivo de arroz">
-        <p>Consiste en inundar el terreno de cultivo. Aunque menos eficiente, es tradicional en cultivos como el arroz.</p>
-      </div>
-      <div class="sistema">
-        <h3>Riego por Gravedad</h3>
-        <img src="riego por gravedad.jpg" alt="Canales distribuyendo agua por pendiente">
-        <p>Utiliza la pendiente natural del terreno para distribuir el agua sin necesidad de bombeo. Requiere planificación del terreno.</p>
-      </div>
-      <div class="sistema">
-        <h3>Riego Subterráneo</h3>
-        <img src="riego subterraneo.jpg" alt="Tuberías enterradas para riego a nivel de raíz">
-        <p>Entierra las tuberías para suministrar agua directamente a las raíces, reduciendo evaporación y malezas.</p>
-      </div>
-      <div class="sistema">
-        <h3>Riego por Nebulización</h3>
-        <img src="riego por nebulizacion.jpg" alt="Sistema de riego por nebulización en invernadero">
-        <p>Genera finas gotas en forma de niebla, usado comúnmente en viveros y ambientes controlados por humedad.</p>
-      </div>
-      <div class="sistema">
-        <h3>Riego Hidropónico</h3>
-        <img src="riego hidroponico.jpg" alt="Cultivo hidropónico con solución nutritiva">
-        <p>Utilizado en cultivos sin suelo, donde las raíces reciben una solución nutritiva en agua.</p>
-      </div>
-      <div class="sistema">
-        <h3>Riego Solar</h3>
-        <img src="riego solar.jpg" alt="Paneles solares conectados a sistema de riego">
-        <p>Incorpora paneles solares para alimentar bombas o sistemas automatizados, ideal para zonas rurales sin acceso eléctrico.</p>
-      </div>
-    </div>
+    <!-- Secciones de Detalles -->
+    <section class="irrigation-details" id="detalle-goteo">
+      <h2>Riego por Goteo</h2>
+      <p>El riego por goteo es un sistema de alta eficiencia que entrega agua directamente a la zona radicular de las plantas a través de goteros o emisores instalados en tuberías. Este método asegura que cada planta reciba la cantidad exacta de agua necesaria, reduciendo el desperdicio y promoviendo un crecimiento saludable.</p>
+      <h3>Ventajas</h3>
+      <ul>
+        <li>Ahorro de agua de hasta un 60% comparado con métodos tradicionales.</li>
+        <li>Reducción de malezas al limitar el riego a las raíces de los cultivos.</li>
+        <li>Precisión en la entrega de agua y fertilizantes (fertirrigación).</li>
+        <li>Adaptable a diferentes tipos de suelo y topografías.</li>
+      </ul>
+      <h3>Aplicaciones</h3>
+      <p>Ideal para cultivos en hileras como hortalizas (tomates, pimientos), frutales (cítricos, aguacates) y viñedos. También se usa en jardines y huertos domésticos.</p>
+      <h3>Ejemplo Práctico</h3>
+      <p>Un agricultor en Santiago instaló riego por goteo en su cultivo de tomates de 2 hectáreas. Con un sistema diseñado por Smart Watering, redujo su consumo de agua de 8000 a 3000 litros por semana, aumentando la producción en un 20% debido a una mejor absorción de nutrientes.</p>
+      <h3>Datos Técnicos</h3>
+      <p>Eficiencia hídrica: 90-95%. Presión operativa: 1-2 bares. Caudal por gotero: 1-4 L/h. Requiere filtración para evitar obstrucciones.</p>
+      <a href="#irrigation-types" class="back-link" aria-label="Volver a tipos de riego">Volver</a>
+    </section>
+
+    <section class="irrigation-details" id="detalle-aspersión">
+      <h2>Riego por Aspersión</h2>
+      <p>El riego por aspersión distribuye agua a través de aspersores que simulan lluvia, cubriendo grandes áreas de manera uniforme. Los aspersores pueden ser fijos, giratorios o de impacto, y se ajustan según las necesidades del cultivo y el terreno.</p>
+      <h3>Ventajas</h3>
+      <ul>
+        <li>Cubre áreas extensas rápidamente, ideal para cultivos grandes.</li>
+        <li>Adaptable a terrenos irregulares o inclinados.</li>
+        <li>Permite la aplicación de fertilizantes líquidos.</li>
+        <li>Fácil de instalar y mantener.</li>
+      </ul>
+      <h3>Aplicaciones</h3>
+      <p>Perfecto para cultivos extensivos como maíz, trigo, o pastizales, así como para césped en campos deportivos o jardines públicos.</p>
+      <h3>Ejemplo Práctico</h3>
+      <p>Una finca de maíz de 10 hectáreas en la República Dominicana implementó riego por aspersión con aspersores de 15 metros de radio. El sistema, controlado por Smart Watering, optimizó el riego a 2 horas diarias, mejorando la uniformidad del cultivo y reduciendo costos de mano de obra.</p>
+      <h3>Datos Técnicos</h3>
+      <p>Radio de cobertura: 5-20 metros. Eficiencia hídrica: 70-85%. Presión requerida: 2-4 bares. Susceptible a pérdidas por viento.</p>
+      <a href="#irrigation-types" class="back-link" aria-label="Volver a tipos de riego">Volver</a>
+    </section>
+
+    <section class="irrigation-details" id="detalle-subterraneo">
+      <h2>Riego Subterráneo</h2>
+      <p>El riego subterráneo utiliza tuberías perforadas o emisores enterrados para suministrar agua directamente al subsuelo, cerca de las raíces. Este sistema minimiza la evaporación y protege las tuberías de daños externos, siendo ideal para áreas donde la estética es importante.</p>
+      <h3>Ventajas</h3>
+      <ul>
+        <li>Reducción de la evaporación en un 20-30% comparado con riego superficial.</li>
+        <li>Protección de tuberías contra daños por maquinaria o clima.</li>
+        <li>Mantiene la superficie seca, ideal para campos deportivos.</li>
+        <li>Promueve un crecimiento radicular profundo.</li>
+      </ul>
+      <h3>Aplicaciones</h3>
+      <p>Recomendado para campos deportivos, viñedos, cultivos permanentes como bananos, y jardines ornamentales.</p>
+      <h3>Ejemplo Práctico</h3>
+      <p>Un viñedo en la región noroeste instaló riego subterráneo a 30 cm de profundidad. Con Smart Watering, el sistema redujo las pérdidas por evaporación en un 30% y mejoró la calidad de las uvas, aumentando el rendimiento en un 15%.</p>
+      <h3>Datos Técnicos</h3>
+      <p>Profundidad de instalación: 20-40 cm. Eficiencia hídrica: 85-90%. Requiere suelos bien drenados para evitar encharcamientos.</p>
+      <a href="#irrigation-types" class="back-link" aria-label="Volver a tipos de riego">Volver</a>
+    </section>
+
+    <section class="irrigation-details" id="detalle-automatizado">
+      <h2>Riego Automatizado</h2>
+      <p>El riego automatizado integra sensores de humedad, temperatura y software para monitorear y ajustar el riego en tiempo real. Los sistemas de Smart Watering permiten control remoto vía smartphone, optimizando el uso de agua y energía según las condiciones del cultivo.</p>
+      <h3>Ventajas</h3>
+      <ul>
+        <li>Optimización del riego en tiempo real, ahorrando hasta un 50% de agua.</li>
+        <li>Control remoto y programación desde dispositivos móviles.</li>
+        <li>Integración con datos climáticos para ajustes predictivos.</li>
+        <li>Reducción de costos operativos y mano de obra.</li>
+      </ul>
+      <h3>Aplicaciones</h3>
+      <p>Ideal para agricultura de precisión, invernaderos, cultivos de alto valor como fresas, y jardines inteligentes.</p>
+      <h3>Ejemplo Práctico</h3>
+      <p>Un invernadero de pimientos en Santiago instaló un sistema automatizado de Smart Watering con sensores de humedad. El sistema ajusta el riego en segundos según las necesidades del suelo, reduciendo el consumo de agua en un 45% y aumentando la producción en un 25%.</p>
+      <h3>Datos Técnicos</h3>
+      <p>Eficiencia hídrica: 95%+. Sensores compatibles: humedad, temperatura, conductividad. Conexión: Wi-Fi o 4G. Requiere mantenimiento de sensores.</p>
+      <a href="#irrigation-types" class="back-link" aria-label="Volver a tipos de riego">Volver</a>
+    </section>
   </main>
 
-  <!-- Pie de página -->
   <footer>
     <div class="footer-container">
       <div class="footer-section footer-about">
@@ -447,9 +567,9 @@
       </div>
       <div class="footer-section footer-contact">
         <h3>Contáctanos</h3>
-        <p><i class="fas fa-envelope"></i> info@smartwatering.com</p>
-        <p><i class="fas fa-phone"></i> +123 456 7890</p>
-        <p><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad, País</p>
+        <p><i class="fas fa-envelope"></i> contacto@smartwatering.com</p>
+        <p><i class="fas fa-phone"></i> +1 (809) 555-1234</p>
+        <p><i class="fas fa-map-marker-alt"></i> Calle Verde #123, Santiago, República Dominicana</p>
         <div class="footer-social">
           <a href="https://instagram.com/smartwatering" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://twitter.com/smartwatering" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
@@ -501,6 +621,16 @@
     } else {
       console.warn("particles.js no se cargó correctamente.");
     }
+
+    // Desplazamiento suave para enlaces
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
   </script>
 </body>
 </html>
