@@ -6,8 +6,6 @@
   <title>Sistemas de Riego - Smart Watering</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous">
-  <!-- Respaldo local (descomentar si se descarga Font Awesome localmente) -->
-  <!-- <link rel="stylesheet" href="path/to/local/fontawesome/css/all.min.css"> -->
   <style>
     * {
       box-sizing: border-box;
@@ -112,6 +110,8 @@
       opacity: 0;
       transform: translateY(30px);
       animation: fadeInUp 0.8s ease forwards;
+      display: flex;
+      flex-direction: column;
     }
 
     .sistema:nth-child(1) { animation-delay: 0.1s; }
@@ -136,6 +136,8 @@
       color: #D1D5DB;
       font-size: 0.95rem;
       line-height: 1.5;
+      margin-bottom: 1rem;
+      flex-grow: 1;
     }
 
     .sistema img {
@@ -149,7 +151,24 @@
       transform: scale(1.05);
     }
 
-    /* Estilos del footer mejorado */
+    .sistema a {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: #10B981;
+      color: #0B0F0E;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      align-self: center;
+      margin-top: auto;
+    }
+
+    .sistema a:hover {
+      background-color: #059669;
+      transform: scale(1.05);
+    }
+
     footer {
       background: linear-gradient(180deg, #014421 0%, #0B0F0E 100%);
       color: #F3F4F6;
@@ -360,7 +379,7 @@
   <!-- Encabezado -->
   <header>
     <div class="logo">
-      <img src="logo smart.png" alt="Smart Watering" style="height: 40px; vertical-align: middle; margin-right: 5px;">
+      <img src="logo smart.png" alt="Smart Watering" style="height: 40px; vertical-align: middle; margin-right: 5px;" loading="lazy">
       Smart Watering
     </div>
     <nav>
@@ -384,43 +403,51 @@
     <div class="sistemas">
       <div class="sistema">
         <h3>Riego por Goteo</h3>
-        <img src="riego por goteo.jpg" alt="Sistema de riego por goteo en cultivo agrícola">
+        <img src="riego por goteo.jpg" alt="Sistema de riego por goteo en cultivo agrícola" loading="lazy">
         <p>Distribuye el agua gota a gota directamente en la raíz de las plantas. Es ideal para cultivos con alta precisión hídrica y zonas áridas.</p>
+        <a href="RiegoPorGoteo.html" aria-label="Ver más sobre Riego por Goteo">Ver Más</a>
       </div>
       <div class="sistema">
         <h3>Riego por Aspersión</h3>
-        <img src="riego por aspercion.jpg" alt="Aspersores regando un campo agrícola">
+        <img src="riego por aspercion.jpg" alt="Aspersores regando un campo agrícola" loading="lazy">
         <p>Simula la lluvia al lanzar agua al aire mediante aspersores. Es efectivo para áreas extensas y cultivos como cereales o pastos.</p>
+        <a href="RiegoPorAspersion.html" aria-label="Ver más sobre Riego por Aspersión">Ver Más</a>
       </div>
       <div class="sistema">
         <h3>Riego por Inundación</h3>
-        <img src="riego por inundacion.jpg" alt="Campo inundado para cultivo de arroz">
+        <img src="riego por inundacion.jpg" alt="Campo inundado para cultivo de arroz" loading="lazy">
         <p>Consiste en inundar el terreno de cultivo. Aunque menos eficiente, es tradicional en cultivos como el arroz.</p>
+        <a href="RiegoPorInundacion.html" aria-label="Ver más sobre Riego por Inundación">Ver Más</a>
       </div>
       <div class="sistema">
         <h3>Riego por Gravedad</h3>
-        <img src="riego por gravedad.jpg" alt="Canales distribuyendo agua por pendiente">
+        <img src="riego por gravedad.jpg" alt="Canales distribuyendo agua por pendiente" loading="lazy">
         <p>Utiliza la pendiente natural del terreno para distribuir el agua sin necesidad de bombeo. Requiere planificación del terreno.</p>
+        <a href="RiegoPorGravedad.html" aria-label="Ver más sobre Riego por Gravedad">Ver Más</a>
       </div>
       <div class="sistema">
         <h3>Riego Subterráneo</h3>
-        <img src="riego subterraneo.jpg" alt="Tuberías enterradas para riego a nivel de raíz">
+        <img src="riego subterraneo.jpg" alt="Tuberías enterradas para riego a nivel de raíz" loading="lazy">
         <p>Entierra las tuberías para suministrar agua directamente a las raíces, reduciendo evaporación y malezas.</p>
+        <a href="RiegoSubterraneo.html" aria-label="Ver más sobre Riego Subterráneo">Ver Más</a>
       </div>
       <div class="sistema">
         <h3>Riego por Nebulización</h3>
-        <img src="riego por nebulizacion.jpg" alt="Sistema de riego por nebulización en invernadero">
+        <img src="riego por nebulizacion.jpg" alt="Sistema de riego por nebulización en invernadero" loading="lazy">
         <p>Genera finas gotas en forma de niebla, usado comúnmente en viveros y ambientes controlados por humedad.</p>
+        <a href="RiegoPorNebulizacion.html" aria-label="Ver más sobre Riego por Nebulización">Ver Más</a>
       </div>
       <div class="sistema">
         <h3>Riego Hidropónico</h3>
-        <img src="riego hidroponico.jpg" alt="Cultivo hidropónico con solución nutritiva">
+        <img src="riego hidroponico.jpg" alt="Cultivo hidropónico con solución nutritiva" loading="lazy">
         <p>Utilizado en cultivos sin suelo, donde las raíces reciben una solución nutritiva en agua.</p>
+        <a href="RiegoHidroponico.html" aria-label="Ver más sobre Riego Hidropónico">Ver Más</a>
       </div>
       <div class="sistema">
         <h3>Riego Solar</h3>
-        <img src="riego solar.jpg" alt="Paneles solares conectados a sistema de riego">
+        <img src="riego solar.jpg" alt="Paneles solares conectados a sistema de riego" loading="lazy">
         <p>Incorpora paneles solares para alimentar bombas o sistemas automatizados, ideal para zonas rurales sin acceso eléctrico.</p>
+        <a href="RiegoSolar.html" aria-label="Ver más sobre Riego Solar">Ver Más</a>
       </div>
     </div>
   </main>
